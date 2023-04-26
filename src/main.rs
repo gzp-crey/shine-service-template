@@ -1,12 +1,5 @@
-use axum::routing::delete;
-use axum::{
-    extract::{Path, Query},
-    http::StatusCode,
-    response::IntoResponse,
-    routing::{get, post},
-    Extension, Json, Router,
-};
-use serde::{Deserialize, Serialize};
+use anyhow::{anyhow, Error as AnyError};
+use axum::{routing::get, Router};
 use shine_service::axum::tracing::{tracing_layer, TracingService};
 use std::net::SocketAddr;
 use tokio::{
@@ -33,10 +26,7 @@ async fn async_main(rt_handle: RtHandle) -> Result<(), AnyError> {
         // initialize a pre-init logger
         let pre_init_log = {
             let _ = tracing_log::LogTracer::init();
-            let pre_init_log = tracing_subscriber::fmt()
-                .with_env_filter("info")
-                .compact()
-                .finish();
+            let pre_init_log = tracing_subscriber::fmt().with_env_filter("info").compact().finish();
             Dispatch::new(pre_init_log)
         };
         let _pre_init_log_guard = tracing::dispatcher::set_default(&pre_init_log);

@@ -1,4 +1,3 @@
-use crate::session;
 use azure_identity::AzureCliCredential;
 use config::{Config, ConfigError, Environment, File};
 use serde::{Deserialize, Serialize};

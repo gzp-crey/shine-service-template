@@ -2125,6 +2125,7 @@ dependencies = [
 name = "shine-identity"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "axum",
  "azure_core",
  "azure_identity",

@@ -6,6 +6,12 @@
     },
 
     "cSpell.words": [
+        "chrono",
+        "keyvault",
+        "rustls",
+        "serde",
+        "sqlx",
+        "thiserror"
     ],
     "cmake.configureOnOpen": false
 }
