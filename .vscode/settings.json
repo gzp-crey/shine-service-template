@@ -1,0 +1,11 @@
+{
+    "terminal.integrated.env.windows": {
+        "_RUST_BACKTRACE": "full",
+        "MIRIFLAGS": "-Zmiri-backtrace=full",
+        "RUST_LOG": "info, shine_identity=trace,sqlx=WARN"
+    },
+
+    "cSpell.words": [
+    ],
+    "cmake.configureOnOpen": false
+}
